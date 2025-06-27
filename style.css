@@ -10,37 +10,43 @@ body {
     color: var(--fg);
 }
 
-.library.container {
-    margin: 30px 0;
+/* .library { */
+/*     display: flex; */
+/*     flex-direction: column; */
+/*     align-items: flex-start; */
+/* } */
+
+.library-container {
     font-size: 18px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 300px);
+    /* grid-template-columns: repeat(auto-fit, 300px); */
     gap: 2rem;
 }
 
-.library.card {
+.library-card {
     display: flex;
     flex-direction: column;
     border: 2px solid;
     border-color: var(--fg-muted);
     border-radius: 10px;
-    min-height: 350px;
-    width: 300px;
+    min-height: 300px;
+    width: 250px;
     box-sizing: border-box;
     padding: 0 20px;
     text-align: center;
 }
 
-.card.title {
+.card-title {
     font-size: 24px;
     font-weight: bold;
 }
 
-.card.author {
+.card-author {
     font-style: italic;
 }
 
-.card.status {
+.card-status {
+    color: var(--fg-muted);
     margin-top: auto;
     padding: 1em;
 }

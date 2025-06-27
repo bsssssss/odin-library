@@ -22,19 +22,19 @@ addBookToLibrary(
 
 function makeBookCard(book) {
     let author = document.createElement('p');
-    author.classList.add('card', 'author');
+    author.classList.add('card-author');
     author.textContent = book.author;
 
     let title = document.createElement('p');
-    title.classList.add('card', 'title');
+    title.classList.add('card-title');
     title.textContent = book.title;
 
     let status = document.createElement('div');
-    status.classList.add('card', 'status');
+    status.classList.add('card-status');
     status.textContent = book.status;
 
     let card = document.createElement('div');
-    card.classList.add('library', 'card');
+    card.classList.add('library-card');
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(status);
@@ -42,7 +42,7 @@ function makeBookCard(book) {
     return card;
 }
 
-const libraryContainer = document.querySelector('.container.library');
+const libraryContainer = document.querySelector('.library-container');
 function makeLibrary(library) {
     for (let book of library) {
         let card = makeBookCard(book);
