@@ -27,4 +27,4 @@ tableau. Pour chaque objet `Book`, on créer un élément html (une carte) avec:
 
 ### Formulaire
 
-Pour ajouter un livre à la collection,
+Sert à ajouter un livre à la collection.
