@@ -43,6 +43,7 @@ function makeBookCard(book) {
 }
 
 const libraryContainer = document.querySelector('.library-container');
+
 function makeLibrary(library) {
     for (let book of library) {
         let card = makeBookCard(book);
@@ -51,3 +52,15 @@ function makeLibrary(library) {
 }
 
 window.onload = makeLibrary(library);
+
+const addBookDialog = document.querySelector('#add-form');
+const addBookButton = document.querySelector('#add-button');
+const closeAddBookButton = document.querySelector('dialog button');
+
+addBookButton.addEventListener('click', () => {
+    addBookDialog.showModal();
+});
+
+closeAddBookButton.addEventListener('click', () => {
+    addBookDialog.close();
+});
