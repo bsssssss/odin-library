@@ -65,3 +65,17 @@ body {
     margin-top: auto;
     padding: 1em;
 }
+
+dialog {
+    color: var(--fg);
+    background-color: var(--bg);
+    border-color: var(--fg-muted);
+}
+
+form {
+    margin: 1rem 0;
+}
+
+label {
+    display: block;
+}
