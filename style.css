@@ -68,10 +68,6 @@ button {
     margin-top: 10px;
 }
 
-.add-book-dialog-button:hover {
-    color: black;
-}
-
 dialog .title {
     text-align: center;
 }
