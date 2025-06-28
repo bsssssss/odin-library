@@ -8,8 +8,38 @@
     <title>Library</title>
   </head>
   <body>
+    <dialog id="add-form">
+      <p>What are we reading ?</p>
+      <form>
+        <p>
+          <label for="titles">
+            Title:
+            <input type="text">
+          </label>
+        </p>
+        <p>
+          <label for="author">
+            By:
+            <input type="text">
+          </label>
+        </p>
+        <p>
+          <label for="status">
+            Status:
+            <select name="status" id="status">
+              <option value="not_read">Not read yet</option>
+              <option value="reading">Reading</option>
+              <option value="read">Read</option>
+            </select>
+          </label>
+        </p>
+      </form>
+      <button autofocus>Done</button>
+    </dialog>
     <div class="library">
-      <h2>Your Books</h2>
+      <div class="header">
+        <h1>Your Books</h1>
+        <button id="add-button">+</button></div>
       <div class="library-container"></div>
     </div>
   </body>
