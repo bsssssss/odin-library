@@ -4,29 +4,36 @@
     --fg: hsl(19, 56.1%, 40.2%);
     --fg-muted: hsl(22, 45.5%, 68.9%);
     color: var(--fg);
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: var(--bg) ;
+    background-color: var(--bg);
     padding: 1rem 5rem;
 }
 
-/* .library { */
-/*     display: flex; */
-/*     flex-direction: column; */
-/*     align-items: flex-start; */
-/* } */
+.library .header {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: left;
+}
+
+.library .header button {
+    color: var(--bg);
+    font-size: 24px;
+    background-color: var(--fg-muted);
+    border: 0px;
+    border-radius: 8px;
+    /* margin-right: 10px; */
+}
 
 .library-container {
     font-size: 18px;
     display: grid;
-    /* grid-template-columns: repeat(auto-fit, 300px); */
-    gap: 2rem;
-    height: 80vh;
-    width: fit-content;
-    overflow-y: scroll;
-    scrollbar-color: var(--fg-muted) var(--bg);
-    padding-right: 10px;
+    grid-template-columns: repeat(auto-fit, 250px);
+    gap: 1rem;
 }
 
 .library-card {
@@ -35,8 +42,7 @@ body {
     border: 2px solid;
     border-color: var(--fg-muted);
     border-radius: 10px;
-    min-height: 300px;
-    height: fit-content;
+    height: 300px;
     width: 250px;
     box-sizing: border-box;
     padding: 0 20px;
@@ -44,6 +50,8 @@ body {
 }
 
 .card-title {
+    overflow-y: scroll;
+    scrollbar-color: var(--fg-muted) var(--bg);
     font-size: 24px;
     font-weight: bold;
 }
