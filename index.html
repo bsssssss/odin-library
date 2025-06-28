@@ -11,28 +11,22 @@
     <dialog id="add-form">
       <p>What are we reading ?</p>
       <form>
-        <p>
-          <label for="titles">
-            Title:
-            <input type="text">
-          </label>
-        </p>
-        <p>
-          <label for="author">
-            By:
-            <input type="text">
-          </label>
-        </p>
-        <p>
-          <label for="status">
-            Status:
-            <select name="status" id="status">
-              <option value="not_read">Not read yet</option>
-              <option value="reading">Reading</option>
-              <option value="read">Read</option>
-            </select>
-          </label>
-        </p>
+        <label for="titles">
+          Title
+          <input type="text">
+        </label>
+        <label for="author">
+          Author
+          <input type="text">
+        </label>
+        <label for="status">
+          Status
+          <select name="status" id="status">
+            <option value="not_read">Not read yet</option>
+            <option value="reading">Reading</option>
+            <option value="read">Read</option>
+          </select>
+        </label>
       </form>
       <button autofocus>Done</button>
     </dialog>
