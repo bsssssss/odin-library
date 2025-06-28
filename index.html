@@ -8,26 +8,35 @@
     <title>Library</title>
   </head>
   <body>
-    <dialog id="add-form">
-      <p>What are we reading ?</p>
+    <dialog class="add-book-dialog">
       <form>
-        <label for="titles"> Title </label>
-        <input type="text">
-        <label for="author"> Author </label>
-        <input type="text">
-        <label for="status"> Status </label>
-        <select name="status" id="status">
-          <option value="not_read">Not read yet</option>
-          <option value="reading">Reading</option>
-          <option value="read">Read</option>
-        </select>
+        <p class="title">What are we reading ?</p>
+        <p>
+          <label for="titles">Title</label>
+          <input type="text" required>
+        </p>
+        <p>
+          <label for="author">Author</label>
+          <input type="text" required>
+        </p>
+        <p>
+          <label for="status">Status</label>
+          <select name="status" id="status">
+            <option value="not_read">Not read yet</option>
+            <option value="reading">Reading</option>
+            <option value="read">Read</option>
+          </select>
+        </p>
       </form>
-      <button autofocus>Done</button>
+      <div>
+        <button class="add-book-dialog-button add" autofocus>add</button>
+        <button class="add-book-dialog-button cancel" >cancel</button>
+      </div>
     </dialog>
     <div class="library">
       <div class="header">
         <h1>Your Books</h1>
-        <button id="add-button">+</button></div>
+        <button class="add-book-button">+</button></div>
       <div class="library-container"></div>
     </div>
   </body>

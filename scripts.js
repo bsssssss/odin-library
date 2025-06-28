@@ -53,14 +53,15 @@ function makeLibrary(library) {
 
 window.onload = makeLibrary(library);
 
-const addBookDialog = document.querySelector('#add-form');
-const addBookButton = document.querySelector('#add-button');
-const closeAddBookButton = document.querySelector('dialog button');
+const addBookDialog = document.querySelector('.add-book-dialog');
+const addBookButton = document.querySelector('.add-book-button');
+const submitButton = document.querySelector('.add-book-dialog-button.submit');
+const cancelButton = document.querySelector('.add-book-dialog-button.cancel');
 
 addBookButton.addEventListener('click', () => {
     addBookDialog.showModal();
 });
 
-closeAddBookButton.addEventListener('click', () => {
+cancelButton.addEventListener('click', () => {
     addBookDialog.close();
 });
