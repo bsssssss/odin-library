@@ -28,3 +28,13 @@ tableau. Pour chaque objet `Book`, on créer un élément html (une carte) avec:
 ### Formulaire
 
 Sert à ajouter un livre à la collection.
+
+- Créer le formulaire dans le html.
+- Écouter le boutton d'envoi du formulaire pour ajouter la nouvelle entrée à la
+  librairie.
+
+Le formulaire contient :
+
+- Un champ pour le nom de l'auteur.
+- Un champ pour le titre.
+- 3 boutons radio pour le statut. `[read] [reading] [not read yet]`
