@@ -45,6 +45,7 @@ function makeBookCard(book) {
         const index = library.findIndex((item) => item.id === id);
         const book = library[index];
         book.toggleStatus();
+        e.target.textContent = book.status;
     });
 
     let deleteBtn = document.createElement('button');
