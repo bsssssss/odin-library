@@ -7,17 +7,25 @@ function Book(title, author, status) {
     this.status = status;
 }
 
+Book.prototype.toggleStatus = function () {
+    if (this.status <= 0) {
+        this.status = 1;
+    } else {
+        this.status = 0;
+    }
+};
+
 function addBookToLibrary(author, title, status) {
     let book = new Book(author, title, status);
     library.push(book);
 }
 
-addBookToLibrary('Snow Crash', 'Neal Stephenson', 'reading');
-addBookToLibrary('Cryptonomicon', 'Neal Stephenson', 'not read yet');
+addBookToLibrary('Snow Crash', 'Neal Stephenson', 0);
+addBookToLibrary('Cryptonomicon', 'Neal Stephenson', 1);
 addBookToLibrary(
     'A very long title that make no sense but might represent those funny titles we see in older books, or maybe studies or thesis titles, something like - Studies of flies and their flight patterns across living rooms and why they love to annoy you with their little legs and arms.',
     'Neal Stephenson',
-    'not read yet'
+    0
 );
 
 function makeBookCard(book) {
@@ -32,6 +40,12 @@ function makeBookCard(book) {
     let status = document.createElement('button');
     status.classList.add('card-status');
     status.textContent = book.status;
+    status.addEventListener('click', (e) => {
+        const id = e.target.closest('.library-card').dataset.id;
+        const index = library.findIndex((item) => item.id === id);
+        const book = library[index];
+        book.toggleStatus();
+    });
 
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('library-card-delete-btn');
@@ -48,7 +62,7 @@ function makeBookCard(book) {
 
     let card = document.createElement('div');
     card.classList.add('library-card');
-    deleteBtn.setAttribute('data-id', book.id);
+    card.setAttribute('data-id', book.id);
     card.appendChild(deleteBtn);
     card.appendChild(title);
     card.appendChild(author);
@@ -59,17 +73,18 @@ function makeBookCard(book) {
 
 const libraryContainer = document.querySelector('.library-container');
 
+function updateLibrary(book) {
+    let card = makeBookCard(book);
+    libraryContainer.appendChild(card);
+}
+
 function refreshLibrary() {
     for (let book of library) {
         updateLibrary(book);
     }
 }
-refreshLibrary();
 
-function updateLibrary(book) {
-    let card = makeBookCard(book);
-    libraryContainer.appendChild(card);
-}
+refreshLibrary();
 
 const addBookDialog = document.querySelector('.add-book-dialog');
 
