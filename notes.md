@@ -38,3 +38,9 @@ Le formulaire contient :
 - Un champ pour le nom de l'auteur.
 - Un champ pour le titre.
 - 3 boutons radio pour le statut. `[read] [reading] [not read yet]`
+
+### Delete Book
+
+Ajouter un boutton à chaque livre pour l'enlever de la librairie. On ajoute un
+attribut data qui correspond à l'id du livre. On pourra récuperer plus tard
+cette info avec `element.dataset.id`
