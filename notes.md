@@ -44,3 +44,9 @@ Le formulaire contient :
 Ajouter un boutton à chaque livre pour l'enlever de la librairie. On ajoute un
 attribut data qui correspond à l'id du livre. On pourra récuperer plus tard
 cette info avec `element.dataset.id`
+
+### Update du statut
+
+- Toggle pour la propriété `status` d'un objet `Book`
+- Call cette méthode quand on clique sur le statut
+- Update la carte avec le nouveau statut

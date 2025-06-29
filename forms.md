@@ -18,6 +18,7 @@ form.addEventListener('submit', (e) => {
   e.preventDefault(); // Prevents page refresh
   const formData = new FormData(e.target);
   const value = formData.get('value');
+  form.reset() // Clear form inputs
 });
 ```
 
