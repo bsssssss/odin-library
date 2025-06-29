@@ -15,18 +15,26 @@ Book.prototype.toggleStatus = function () {
     }
 };
 
-function addBookToLibrary(author, title, status) {
-    let book = new Book(author, title, status);
+function addBookToLibrary(title, author, status) {
+    let book = new Book(title, author, status);
     library.push(book);
 }
 
 addBookToLibrary('Snow Crash', 'Neal Stephenson', 0);
-addBookToLibrary('Cryptonomicon', 'Neal Stephenson', 1);
+addBookToLibrary('Cryptonomicon', 'Neal Stephenson', 0);
 addBookToLibrary(
     'A very long title that make no sense but might represent those funny titles we see in older books, or maybe studies or thesis titles, something like - Studies of flies and their flight patterns across living rooms and why they love to annoy you with their little legs and arms.',
     'Neal Stephenson',
-    0
+    1
 );
+
+function showStatus(status) {
+    if (status <= 0) {
+        return 'not read yet';
+    } else {
+        return 'read';
+    }
+}
 
 function makeBookCard(book) {
     let author = document.createElement('p');
@@ -39,13 +47,13 @@ function makeBookCard(book) {
 
     let status = document.createElement('button');
     status.classList.add('card-status');
-    status.textContent = book.status;
+    status.textContent = showStatus(book.status);
     status.addEventListener('click', (e) => {
         const id = e.target.closest('.library-card').dataset.id;
         const index = library.findIndex((item) => item.id === id);
         const book = library[index];
         book.toggleStatus();
-        e.target.textContent = book.status;
+        e.target.textContent = showStatus(book.status);
     });
 
     let deleteBtn = document.createElement('button');
@@ -103,8 +111,9 @@ addBookForm.addEventListener('submit', (e) => {
     const author = formData.get('author');
     const status = formData.get('status');
 
-    addBookToLibrary(author, title, status);
+    addBookToLibrary(title, author, status);
     updateLibrary(library.at(-1));
+    addBookForm.reset();
 });
 
 const submitButton = document.querySelector('.add-book-dialog-button.submit');
