@@ -61,40 +61,36 @@ button {
     border-radius: 8px;
 }
 
-.add-book-dialog-button {
-    font-size: 1rem;
-    padding: 5px 30px;
-    align-self: center;
-    margin-top: 10px;
-}
-
-dialog .title {
-    text-align: center;
-}
-
-.add-book-dialog {
-    width: 500px;
+.library {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .library .header {
     display: flex;
     gap: 1rem;
     align-items: center;
-    justify-content: left;
 }
 
-.library .header button {
+.add-book-button {
     font-size: 24px;
     border: 0px;
     border-radius: 8px;
     /* margin-right: 10px; */
 }
 
+.add-book-button:hover {
+    background-color: var(--fg);
+}
+
 .library-container {
     font-size: 18px;
+    justify-content: center;
     display: grid;
     grid-template-columns: repeat(auto-fit, 250px);
     gap: 1rem;
+    width: 100%;
 }
 
 .library-card {
@@ -115,13 +111,13 @@ dialog .title {
     font-size: 24px;
     background-color: var(--bg);
     color: var(--fg-muted);
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     position: relative;
     align-self: flex-end;
-    margin: 10px;
-    margin-right: -10px;
+    margin: 8px;
+    margin-right: -8px;
 }
 
 .library-card-delete-btn:hover {
@@ -151,4 +147,19 @@ dialog .title {
 
 .card-status:hover {
     color: var(--fg);
+}
+
+.add-book-dialog {
+    width: 500px;
+}
+
+.add-book-dialog .title {
+    text-align: center;
+}
+
+.add-book-dialog-button {
+    font-size: 1rem;
+    padding: 5px 30px;
+    align-self: center;
+    margin-top: 10px;
 }
