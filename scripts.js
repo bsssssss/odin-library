@@ -36,18 +36,19 @@ function makeBookCard(book) {
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('library-card-delete-btn');
     deleteBtn.textContent = '-';
-    deleteBtn.setAttribute('data-id', book.id);
     deleteBtn.addEventListener('click', (e) => {
-        const id = e.target.dataset.id;
+        const parent = e.target.closest('.library-card');
+        const id = parent.dataset.id;
         library.splice(
             library.findIndex((item) => item.id === id),
             1
         );
-        e.target.closest('.library-card').remove();
+        parent.remove();
     });
 
     let card = document.createElement('div');
     card.classList.add('library-card');
+    deleteBtn.setAttribute('data-id', book.id);
     card.appendChild(deleteBtn);
     card.appendChild(title);
     card.appendChild(author);
