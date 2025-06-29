@@ -142,7 +142,13 @@ dialog .title {
 }
 
 .card-status {
+    background-color: var(--bg);
+    font-size: inherit;
     color: var(--fg-muted);
     margin-top: auto;
     padding: 1em;
+}
+
+.card-status:hover {
+    color: var(--fg);
 }
