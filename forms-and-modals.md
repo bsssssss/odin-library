@@ -3,6 +3,7 @@
 ## Form Handling
 
 ### HTML Form Structure
+
 ```html
 <form id="my-form">
   <input type="text" name="title" required>
@@ -11,6 +12,7 @@
 ```
 
 ### JavaScript Event Handling
+
 ```javascript
 const form = document.querySelector('#my-form');
 
@@ -21,6 +23,7 @@ form.addEventListener('submit', (e) => {
 ```
 
 ### Key Points
+
 - HTML `required` attributes validate automatically before submit event fires
 - Use `e.preventDefault()` to stop page refresh
 - Submit event only fires if HTML validation passes
@@ -29,6 +32,7 @@ form.addEventListener('submit', (e) => {
 ## Modal Dialogs
 
 ### HTML Structure
+
 ```html
 <dialog class="my-modal">
   <form>
@@ -39,6 +43,7 @@ form.addEventListener('submit', (e) => {
 ```
 
 ### JavaScript Controls
+
 ```javascript
 const modal = document.querySelector('.my-modal');
 const openBtn = document.querySelector('.open-btn');
@@ -54,7 +59,9 @@ closeBtn.addEventListener('click', () => {
 ```
 
 ### Key Points
+
 - Use `<dialog>` element for semantic modals
 - `showModal()` opens modal with backdrop
 - `close()` closes modal
 - Modal traps focus automatically
+

@@ -51,7 +51,7 @@ function makeLibrary(library) {
     }
 }
 
-// window.onload = makeLibrary(library);
+window.onload = makeLibrary(library);
 
 const addBookDialog = document.querySelector('.add-book-dialog');
 const addBookButton = document.querySelector('.add-book-button');
