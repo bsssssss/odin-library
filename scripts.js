@@ -33,8 +33,13 @@ function makeBookCard(book) {
     status.classList.add('card-status');
     status.textContent = book.status;
 
+    let deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('library-card-delete-btn');
+    deleteBtn.textContent = '-';
+
     let card = document.createElement('div');
     card.classList.add('library-card');
+    card.appendChild(deleteBtn);
     card.appendChild(title);
     card.appendChild(author);
     card.appendChild(status);

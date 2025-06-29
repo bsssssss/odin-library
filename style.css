@@ -110,11 +110,31 @@ dialog .title {
     text-align: center;
 }
 
+.library-card-delete-btn {
+    font-weight: bold;
+    font-size: 24px;
+    background-color: var(--bg);
+    color: var(--fg-muted);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    position: relative;
+    align-self: flex-end;
+    margin: 10px;
+    margin-right: -10px;
+}
+
+.library-card-delete-btn:hover {
+    color: var(--fg);
+}
+
 .card-title {
+    height: 85px;
     overflow-y: scroll;
     scrollbar-color: var(--fg-muted) var(--bg);
     font-size: 24px;
     font-weight: bold;
+    margin: 0px 0 10px;
 }
 
 .card-author {
