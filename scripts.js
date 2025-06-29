@@ -29,7 +29,7 @@ function makeBookCard(book) {
     title.classList.add('card-title');
     title.textContent = book.title;
 
-    let status = document.createElement('div');
+    let status = document.createElement('button');
     status.classList.add('card-status');
     status.textContent = book.status;
 
