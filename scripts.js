@@ -36,6 +36,15 @@ function makeBookCard(book) {
     let deleteBtn = document.createElement('button');
     deleteBtn.classList.add('library-card-delete-btn');
     deleteBtn.textContent = '-';
+    deleteBtn.setAttribute('data-id', book.id);
+    deleteBtn.addEventListener('click', (e) => {
+        const id = e.target.dataset.id;
+        library.splice(
+            library.findIndex((item) => item.id === id),
+            1
+        );
+        e.target.closest('.library-card').remove();
+    });
 
     let card = document.createElement('div');
     card.classList.add('library-card');
@@ -48,13 +57,17 @@ function makeBookCard(book) {
 }
 
 const libraryContainer = document.querySelector('.library-container');
+
+function refreshLibrary() {
+    for (let book of library) {
+        updateLibrary(book);
+    }
+}
+refreshLibrary();
+
 function updateLibrary(book) {
     let card = makeBookCard(book);
     libraryContainer.appendChild(card);
-}
-
-for (let book of library) {
-    updateLibrary(book);
 }
 
 const addBookDialog = document.querySelector('.add-book-dialog');
