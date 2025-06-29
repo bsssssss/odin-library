@@ -51,10 +51,11 @@ function makeLibrary(library) {
     }
 }
 
-window.onload = makeLibrary(library);
+// window.onload = makeLibrary(library);
 
 const addBookDialog = document.querySelector('.add-book-dialog');
 const addBookButton = document.querySelector('.add-book-button');
+const addBookForm = document.querySelector('#add-book-form');
 const submitButton = document.querySelector('.add-book-dialog-button.submit');
 const cancelButton = document.querySelector('.add-book-dialog-button.cancel');
 
@@ -62,6 +63,16 @@ addBookButton.addEventListener('click', () => {
     addBookDialog.showModal();
 });
 
+addBookForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    console.log('submitted !');
+});
+
+submitButton.addEventListener('click', () => {
+    console.log('clicked submit !');
+});
+
 cancelButton.addEventListener('click', () => {
+    console.log('clicked cancel !');
     addBookDialog.close();
 });
