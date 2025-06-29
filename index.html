@@ -9,7 +9,7 @@
   </head>
   <body>
     <dialog class="add-book-dialog">
-      <form>
+      <form id="add-book-form">
         <p class="title">What are we reading ?</p>
         <p>
           <label for="title">Title</label>
@@ -29,8 +29,8 @@
         </p>
       </form>
       <div>
-        <button class="add-book-dialog-button add" autofocus>add</button>
-        <button class="add-book-dialog-button cancel" >cancel</button>
+        <button type="submit" form="add-book-form" class="add-book-dialog-button submit" autofocus>add</button>
+        <button class="add-book-dialog-button cancel">cancel</button>
       </div>
     </dialog>
     <div class="library">
