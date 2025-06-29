@@ -74,11 +74,10 @@ addBookForm.addEventListener('submit', (e) => {
 
 const submitButton = document.querySelector('.add-book-dialog-button.submit');
 submitButton.addEventListener('click', () => {
-    console.log('clicked submit !');
+    addBookDialog.close();
 });
 
 const cancelButton = document.querySelector('.add-book-dialog-button.cancel');
 cancelButton.addEventListener('click', () => {
-    console.log('clicked cancel !');
     addBookDialog.close();
 });
