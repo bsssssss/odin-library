@@ -43,15 +43,14 @@ function makeBookCard(book) {
 }
 
 const libraryContainer = document.querySelector('.library-container');
-
-function makeLibrary(library) {
-    for (let book of library) {
-        let card = makeBookCard(book);
-        libraryContainer.appendChild(card);
-    }
+function updateLibrary(book) {
+    let card = makeBookCard(book);
+    libraryContainer.appendChild(card);
 }
 
-window.onload = makeLibrary(library);
+for (let book of library) {
+    updateLibrary(book);
+}
 
 const addBookDialog = document.querySelector('.add-book-dialog');
 
@@ -63,7 +62,14 @@ addBookButton.addEventListener('click', () => {
 const addBookForm = document.querySelector('#add-book-form');
 addBookForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log('submitted !');
+
+    const formData = new FormData(e.target);
+    const title = formData.get('title');
+    const author = formData.get('author');
+    const status = formData.get('status');
+
+    addBookToLibrary(author, title, status);
+    updateLibrary(library.at(-1));
 });
 
 const submitButton = document.querySelector('.add-book-dialog-button.submit');
